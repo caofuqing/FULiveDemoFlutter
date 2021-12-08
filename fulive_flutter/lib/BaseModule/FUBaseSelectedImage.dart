@@ -54,10 +54,10 @@ class _CustomStreamHomeState extends State<CustomStreamHome> {
   @override
   void initState() {
     super.initState();
-    FULivePlugin.selectedImageOrVideo(widget.type);
+    FulivePlugin.selectedImageOrVideo(widget.type);
 
     //开启流式通道
-    FULivePlugin.startCustomRenderStremListen();
+    FulivePlugin.startCustomRenderStremListen();
     channel = FUFlutterEventChannel(
         (message) => {
               setState(() {

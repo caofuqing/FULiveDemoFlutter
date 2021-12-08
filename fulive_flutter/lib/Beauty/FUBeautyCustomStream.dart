@@ -83,7 +83,7 @@ class _CustomStreamHomeState extends State<CustomStreamHome> {
     // FUBeautyPlugin.configBeauty();
     _manager = FUBeautifyDataManager();
 
-    FULivePlugin.requestVideoProcess();
+    FulivePlugin.requestVideoProcess();
 
     _downloadBtnStatus = widget.type == 0 ? true : false;
   }
@@ -91,21 +91,21 @@ class _CustomStreamHomeState extends State<CustomStreamHome> {
   @override
   void dispose() {
     super.dispose();
-    FULivePlugin.customImageDispose();
+    FulivePlugin.customImageDispose();
     _manager.cacheData();
   }
 
   @override
   Widget build(BuildContext context) {
     //监听native 视频播放回调
-    FULivePlugin.listenNative(listenNativeVideoPlay);
+    FulivePlugin.listenNative(listenNativeVideoPlay);
     //底部美颜组件
     Widget child = BeautyToolsWidget(
         showFilterTips: false,
         bizType: _manager.curBizType,
         dataList: _manager.dataList,
         compareCallback: (bool compare) =>
-            FULivePlugin.customRenderOrigin(compare),
+            FulivePlugin.customRenderOrigin(compare),
         clickItemCallback: (bool flag) {
           _bottomStatus = flag;
           //flag == false 标识底部栏是隐藏的 显示下载按钮，true 表示出现，隐藏下载按钮
@@ -139,7 +139,7 @@ class _CustomStreamHomeState extends State<CustomStreamHome> {
                 child: Container(
                     child: TextButton(
                         onPressed: () {
-                          FULivePlugin.customVideoRePlay();
+                          FulivePlugin.customVideoRePlay();
                           changeVideoPlayBtn(true);
                           //重播隐藏下载按钮，播完之后是否显示 根据之前的下载按钮状态来判定
                           changeDownLoadBtnStatus(false);
@@ -158,7 +158,7 @@ class _CustomStreamHomeState extends State<CustomStreamHome> {
                       color: Colors.white,
                       child: TextButton(
                           onPressed: () {
-                            FULivePlugin.downLoadCustomRender(widget.type);
+                            FulivePlugin.downLoadCustomRender(widget.type);
                             if (widget.type == 1) {
                               changeDownLoadBtnStatus(false);
                             }

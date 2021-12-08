@@ -40,11 +40,11 @@ class SelectedHome extends StatefulWidget {
 
 class _SelectedHomeState extends State<SelectedHome> {
   _openImage() {
-    FULivePlugin.chooseImageOrVideo(0);
+    FulivePlugin.chooseImageOrVideo(0);
   }
 
   _openVideo() {
-    FULivePlugin.chooseImageOrVideo(1);
+    FulivePlugin.chooseImageOrVideo(1);
   }
 
   //监听native 选择图片或者视频的结果进行跳转
@@ -71,7 +71,7 @@ class _SelectedHomeState extends State<SelectedHome> {
 
   @override
   Widget build(BuildContext context) {
-    FULivePlugin.listenNative(listenNativeCustomImage);
+    FulivePlugin.listenNative(listenNativeCustomImage);
     return Scaffold(
       backgroundColor: Colors.black,
       body: WillPopScope(

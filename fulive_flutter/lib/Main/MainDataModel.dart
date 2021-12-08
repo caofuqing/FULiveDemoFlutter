@@ -14,7 +14,7 @@ class MainDataModel {
       developer.log(e.toString() + "json解析出错！！！");
     }
 
-    List checkCodes = await FULivePlugin.getModuleCode();
+    List checkCodes = await FulivePlugin.getModuleCode();
     var checkCode0 = 0;
     var checkCode1 = 0;
     if (checkCodes.length > 1) {

@@ -12,8 +12,8 @@
 @import fluttertoast;
 #endif
 
-#if __has_include(<fulive_plugin/FULivePlugin.h>)
-#import <fulive_plugin/FULivePlugin.h>
+#if __has_include(<fulive_plugin/FulivePlugin.h>)
+#import <fulive_plugin/FulivePlugin.h>
 #else
 @import fulive_plugin;
 #endif
@@ -22,7 +22,7 @@
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
   [FluttertoastPlugin registerWithRegistrar:[registry registrarForPlugin:@"FluttertoastPlugin"]];
-  [FULivePlugin registerWithRegistrar:[registry registrarForPlugin:@"FULivePlugin"]];
+  [FulivePlugin registerWithRegistrar:[registry registrarForPlugin:@"FulivePlugin"]];
 }
 
 @end

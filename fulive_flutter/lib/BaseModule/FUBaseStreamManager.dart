@@ -44,7 +44,7 @@ class FUBaseStreamManager extends ChangeNotifier {
 
   void startStream() {
     //开启流式通道
-    FULivePlugin.startBeautyStreamListen();
+    FulivePlugin.startBeautyStreamListen();
     _channel = FUFlutterEventChannel(
         (message) => _onData(message), (Error error) => _error(error));
   }

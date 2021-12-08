@@ -222,9 +222,11 @@ packages:
   fulive_plugin:
     dependency: "direct main"
     description:
-      path: fulive_plugin
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "933b1974d87087221f17b10103b5fdda73e4f7d9"
+      url: "https://github.com/caofuqing/fulive_plugin.git"
+    source: git
     version: "0.0.1"
   glob:
     dependency: transitive

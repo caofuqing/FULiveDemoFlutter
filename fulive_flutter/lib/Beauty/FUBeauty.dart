@@ -51,6 +51,9 @@ class _FUBeautyState extends State<FUBeauty> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     args = ModalRoute.of(context)!.settings.arguments as FUBaseWidgetArguments;
+    print(args.model);
+    print(args.selectedImagePath);
+    print("---------------------------");
   }
 
   @override
@@ -60,7 +63,7 @@ class _FUBeautyState extends State<FUBeauty> {
       bizType: _manager.curBizType,
       dataList: _manager.dataList,
       compareCallback: (bool compare) {
-        FULivePlugin.renderOrigin(compare);
+        FulivePlugin.renderOrigin(compare);
         //同时禁止录屏按钮点击
         prohibitStream.sink.add(compare);
       },

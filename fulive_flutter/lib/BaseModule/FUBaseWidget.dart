@@ -149,7 +149,7 @@ class _FUBaseWidgetState extends State<FUBaseWidget> {
     if (_prohibitSubscription != null) {
       _prohibitSubscription!.cancel();
     }
-    FULivePlugin.disposeCommon();
+    FulivePlugin.disposeCommon();
   }
 
   @override
@@ -236,7 +236,7 @@ class _FUBaseWidgetState extends State<FUBaseWidget> {
                       double dx = detail.globalPosition.dx;
                       double dy = detail.globalPosition.dy;
                       print("globalPosition.dx = $dx, globalPosition.dy = $dy");
-                      FULivePlugin.manualExpose(dx, dy);
+                      FulivePlugin.manualExpose(dx, dy);
                       setState(() {
                         _dx = dx;
                         _dy = dy;
@@ -323,9 +323,9 @@ class _FUBaseWidgetState extends State<FUBaseWidget> {
                     child: AbsorbPointer(
                       absorbing: _prohibitFUCircleEnable,
                       child: FUCircleInIndicator(
-                        takePhoto: () => FULivePlugin.takePhoto(),
-                        startRecord: () => FULivePlugin.startRecord(),
-                        stopRecord: () => FULivePlugin.stopRecord(),
+                        takePhoto: () => FulivePlugin.takePhoto(),
+                        startRecord: () => FulivePlugin.startRecord(),
+                        stopRecord: () => FulivePlugin.stopRecord(),
                       ),
                     ),
                   ),
@@ -498,7 +498,7 @@ class _FUToolBarState extends State<FUToolBar> {
                 onValueChanged: (value) {
                   setState(() {
                     _segmentValue = value as String;
-                    FULivePlugin.changeCameraFormat();
+                    FulivePlugin.changeCameraFormat();
                   });
                 }),
             color: Color(0x10FFFFFF),
@@ -553,7 +553,7 @@ class _FUToolBarState extends State<FUToolBar> {
           IconButton(
             onPressed: () {
               cameraSeleted = !cameraSeleted;
-              FULivePlugin.changeCameraFront(cameraSeleted);
+              FulivePlugin.changeCameraFront(cameraSeleted);
             },
             icon: Image(
               image: AssetImage("resource/images/commonImage/cameraIcon.png"),
@@ -578,7 +578,7 @@ class _FUToolBarState extends State<FUToolBar> {
             format: _format,
             foramtCallback: (int format) {
               _format = format;
-              Future<int?> ret = FULivePlugin.chooseSessionPreset(format);
+              Future<int?> ret = FulivePlugin.chooseSessionPreset(format);
               // ignore: unrelated_type_equality_checks
               if (ret == 1) {
                 //展示toast
@@ -673,7 +673,7 @@ class SpotlightUI extends StatefulWidget {
 
 class _SpotlightUIState extends State<SpotlightUI> {
   void sliderCallback(double newValue) {
-    FULivePlugin.adjustSpotlight(newValue);
+    FulivePlugin.adjustSpotlight(newValue);
     widget.sliderValueChangeCallback();
   }
 
